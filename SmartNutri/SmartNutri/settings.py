@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'receita',
     'cliente',
     'nutricionista',
-    'receitaingrediente',
     'ingrediente',
     'acompanhamento',
     'planoalimentar',

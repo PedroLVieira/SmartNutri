@@ -1,3 +1,6 @@
 from django.db import models
+from ingrediente.models import Ingrediente
 
-# Create your models here.
+class Substituicao(models.Model):
+    motivo = models.TextField()
+    Ingrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE)
