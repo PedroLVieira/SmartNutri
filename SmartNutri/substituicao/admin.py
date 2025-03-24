@@ -1,3 +1,4 @@
 from django.contrib import admin
+from substituicao.models import Substituicao
 
-# Register your models here.
+admin.site.register(Substituicao)
