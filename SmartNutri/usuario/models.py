@@ -5,11 +5,13 @@ class Usuario(models.Model):
     nome = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     senha = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=True)
     
     TIPO_USUARIO = [
         ('cliente', 'Cliente'),
         ('nutricionista', 'Nutricionista'),
     ]
+    
     tipo = models.CharField(max_length=15, choices=TIPO_USUARIO)
 
     def __str__(self):

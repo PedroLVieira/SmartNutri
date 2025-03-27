@@ -61,18 +61,12 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication' ,
-        
-    ],
-    "DEFAULT_FILTER_BACKENDS": 
-        ("django_filters.rest_framework.DjangoFilterBackend",),
-    "DEFAULT_SCHEMA_CLASS": 
-        "rest_framework.schemas.coreapi.AutoSchema",
-    "DEFAULT_PAGINATION_CLASS": 
-        "rest_framework.pagination.PageNumberPagination",
-   "NON_FIELD_ERRORS_KEY": "error",
-   "PAGE_SIZE": 5,
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework_simplejwt.authentication.JWTAuthentication',],
+    "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "NON_FIELD_ERRORS_KEY": "error",
+    "PAGE_SIZE": 5,
 }   
 
 ROOT_URLCONF = 'SmartNutri.urls'
@@ -131,9 +125,9 @@ MEDIA_URL = '/media/'
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Recife'
 
 USE_I18N = True
 
