@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'acompanhamento',
     'planoalimentar',
     'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [

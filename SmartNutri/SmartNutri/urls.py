@@ -25,6 +25,7 @@ from ingrediente.api.router import ingrediente_router
 from acompanhamento.api.router import acompanhamento_router
 from planoalimentar.api.router import planoalimentar_router
 from django.conf.urls.static import static
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,4 +36,6 @@ urlpatterns = [
     path('api/ingrediente/', include(ingrediente_router.urls)),
     path('api/acompanhamento/', include(acompanhamento_router.urls)),
     path('api/planoalimentar/', include(planoalimentar_router.urls)),
+    path('api/token/', TokenObtainPairView.as_view() , name='token_obtain_pair' ),
+    path('api/token/refresh/' , TokenRefreshView.as_view() , name='token_refresh'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
