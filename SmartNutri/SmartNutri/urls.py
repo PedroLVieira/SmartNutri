@@ -18,6 +18,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from usuario.api.router import usuario_router
+from usuario.views import LoginView, SignUpView
 from cliente.api.router import cliente_router
 from receita.api.router import receita_router
 from nutricionista.api.router import nutricionista_router
@@ -26,6 +27,7 @@ from acompanhamento.api.router import acompanhamento_router
 from planoalimentar.api.router import planoalimentar_router
 from django.conf.urls.static import static
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,4 +40,6 @@ urlpatterns = [
     path('api/planoalimentar/', include(planoalimentar_router.urls)),
     path('api/token/', TokenObtainPairView.as_view() , name='token_obtain_pair' ),
     path('api/token/refresh/' , TokenRefreshView.as_view() , name='token_refresh'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('signup/', SignUpView.as_view(), name='signup'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
